@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Freshslice Pizza Lougheed · Burnaby</title>
+<meta name="description" content="Freshslice Pizza at 4501 Lougheed Hwy, Burnaby (Lougheed). Medium classic pizzas from $12, X-Large from $21. Open 10 AM – 9 PM daily. Order pickup or delivery.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#2e9b4a; --green-d:#1f7536; --red:#e0322b; --red-d:#b8231d;
+  --cream:#fff8ee; --ink:#1d1d1b; --muted:#6b675f; --line:#eadfcd;
+  --display:"Bebas Neue",Impact,"Arial Narrow",sans-serif;
+  --body:"Nunito","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);line-height:1.55;overflow-x:hidden}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(18px,env(safe-area-inset-left));padding-right:max(18px,env(safe-area-inset-right))}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px}
+
+/* top bar */
+.bar{background:var(--green);color:#fff;font-weight:800;font-size:14px;text-align:center;padding:8px 12px;letter-spacing:.02em}
+.bar b{background:#fff;color:var(--green);padding:1px 8px;border-radius:99px;margin-right:6px}
+nav{position:sticky;top:0;z-index:20;background:rgba(255,248,238,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-block:12px}
+.logo{font-family:var(--display);font-size:30px;letter-spacing:.02em;text-decoration:none;line-height:1}
+.logo .g{color:var(--green)}.logo .r{color:var(--red)}
+.logo small{display:block;font-family:var(--body);font-size:11px;font-weight:800;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-top:2px}
+nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-weight:800;font-size:15px}
+nav ul a{text-decoration:none}
+nav ul a:hover{color:var(--red)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-weight:800;text-decoration:none;border-radius:99px;padding:13px 22px;border:2px solid transparent;transition:transform .15s,background .15s;cursor:pointer;font-size:16px}
+.btn:hover{transform:translateY(-2px)}
+.btn-red{background:var(--red);color:#fff}.btn-red:hover{background:var(--red-d)}
+.btn-green{background:var(--green);color:#fff}.btn-green:hover{background:var(--green-d)}
+.btn-ghost{border-color:var(--ink)}
+.btn-sm{padding:9px 16px;font-size:14px}
+
+/* hero */
+.hero{position:relative;overflow:hidden}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center;padding-block:56px 64px}
+.kicker{display:inline-block;background:#fff;border:2px solid var(--green);color:var(--green);font-weight:800;border-radius:99px;padding:5px 14px;font-size:14px}
+h1{font-family:var(--display);font-weight:400;font-size:clamp(56px,9vw,104px);line-height:.9;margin:16px 0 14px;letter-spacing:.01em}
+h1 .r{color:var(--red)}
+.lede{font-size:18px;color:var(--muted);max-width:40ch;margin:0 0 24px}
+.ctas{display:flex;flex-wrap:wrap;gap:12px}
+.rating{margin-top:22px;font-weight:800;display:flex;align-items:center;gap:8px;font-size:15px}
+.stars{color:#f5a623;letter-spacing:2px}
+.pizza{position:relative;aspect-ratio:1;max-width:440px;width:100%;justify-self:center}
+.pizza .crust{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 50% 50%,#f7c14a 0 62%,#e8a33a 63% 70%,#c97a28 71% 100%);box-shadow:0 30px 60px -20px rgba(120,60,10,.45);animation:spin 60s linear infinite}
+.pizza .slice-gap{position:absolute;inset:0;border-radius:50%;background:conic-gradient(var(--cream) 0 22deg,transparent 22deg)}
+.pepp{position:absolute;width:13%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 35% 35%,#e5554a,#b62a20)}
+.leaf{position:absolute;width:7%;aspect-ratio:2/1;border-radius:100% 0;background:var(--green);transform:rotate(30deg)}
+.badge{position:absolute;right:-6px;top:6%;background:var(--red);color:#fff;border-radius:50%;width:34%;aspect-ratio:1;display:grid;place-items:center;text-align:center;font-family:var(--display);font-size:clamp(22px,3.4vw,36px);line-height:.95;transform:rotate(10deg);box-shadow:0 10px 24px -8px rgba(0,0,0,.35)}
+.badge small{display:block;font-family:var(--body);font-weight:800;font-size:12px;letter-spacing:.08em}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+section{padding-block:64px}
+h2{font-family:var(--display);font-weight:400;font-size:clamp(42px,6vw,64px);line-height:.95;margin:0 0 8px}
+.sub{color:var(--muted);margin:0 0 30px;font-size:17px}
+
+/* deals */
+.deals{background:#fff;border-block:1px solid var(--line)}
+.deal-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.deal{border:2px solid var(--line);border-radius:22px;padding:26px;position:relative;overflow:hidden;background:var(--cream)}
+.deal h3{font-family:var(--display);font-weight:400;font-size:34px;margin:0 0 4px;color:var(--green)}
+.deal p{margin:0 0 16px;color:var(--muted)}
+.prices{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.price{background:#fff;border-radius:16px;padding:14px 16px;border:1px solid var(--line)}
+.price .sz{font-weight:800}
+.price .was{color:var(--muted);text-decoration:line-through;font-weight:600;margin-right:6px}
+.price .now{font-family:var(--display);font-size:46px;color:var(--red);line-height:1}
+.price .note{font-size:12.5px;color:var(--muted)}
+.fine{font-size:13px;color:var(--muted);margin-top:14px}
+
+/* menu */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+.tab{background:#fff;border:2px solid var(--line);border-radius:99px;padding:8px 18px;font-weight:800;cursor:pointer;font-family:var(--body);font-size:15px;color:var(--ink)}
+.tab[aria-selected="true"]{background:var(--green);border-color:var(--green);color:#fff}
+.menu-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 28px}
+.item{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.item h4{margin:0;font-size:18px}
+.item h4 .v{color:var(--green);font-size:13px;margin-left:6px}
+.item p{margin:2px 0 0;color:var(--muted);font-size:14.5px}
+.item .pr{font-weight:800;white-space:nowrap;color:var(--red)}
+.panel[hidden]{display:none}
+
+/* order */
+.order{background:var(--green);color:#fff}
+.order h2{color:#fff}
+.order .sub{color:#e6f5ea}
+.order-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.o{background:#fff;color:var(--ink);border-radius:18px;padding:20px;text-decoration:none;display:grid;gap:4px;transition:transform .15s}
+.o:hover{transform:translateY(-3px)}
+.o b{font-size:18px}.o span{color:var(--muted);font-size:14px}
+
+/* visit */
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:22px;padding:26px}
+.card h3{font-family:var(--display);font-weight:400;font-size:32px;margin:0 0 10px}
+.hours{width:100%;border-collapse:collapse;font-size:16px}
+.hours td{padding:7px 0;border-bottom:1px dashed var(--line)}
+.hours td:last-child{text-align:right;font-weight:800}
+.todo{background:#fff4c7;border:1px dashed #d9b400;color:#6b5600;border-radius:8px;padding:1px 6px;font-weight:800;font-size:.92em}
+.addr{font-size:18px;font-weight:800;margin:0 0 4px}
+.feat{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 18px}
+.feat span{background:var(--cream);border:1px solid var(--line);border-radius:99px;padding:5px 12px;font-size:14px;font-weight:700}
+
+/* catering */
+.cater{background:var(--red);color:#fff;border-radius:28px;padding:40px;display:grid;grid-template-columns:1.3fr .7fr;gap:24px;align-items:center}
+.cater h2{color:#fff}.cater p{margin:0;color:#ffe3e1;font-size:17px}
+.cater .btn{background:#fff;color:var(--red);justify-self:start}
+
+footer{padding-block:34px;border-top:1px solid var(--line);font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
+
+/* mobile sticky order bar */
+.mbar{display:none}
+@media (max-width:860px){
+  nav ul{display:none}
+  .hero .wrap{grid-template-columns:1fr;padding-block:34px 44px}
+  .pizza{max-width:300px;order:-1}
+  .deal-grid,.visit-grid,.menu-grid{grid-template-columns:1fr}
+  .order-grid{grid-template-columns:1fr 1fr}
+  .cater{grid-template-columns:1fr;padding:28px}
+  .mbar{display:flex;gap:10px;position:fixed;left:0;right:0;bottom:0;z-index:30;padding:10px max(12px,env(safe-area-inset-left)) calc(10px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line)}
+  .mbar .btn{flex:1;justify-content:center}
+  body{padding-bottom:76px}
+}
+@media (max-width:420px){.prices,.order-grid{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="bar"><b>DEAL</b>Medium classic pizza just $12 · X-Large $21 · In-store price</div>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#top"><span class="g">FRESH</span><span class="r">SLICE</span><small>Lougheed · Burnaby</small></a>
+    <ul>
+      <li><a href="#deals">Deals</a></li>
+      <li><a href="#menu">Menu</a></li>
+      <li><a href="#visit">Visit</a></li>
+      <li><a href="#catering">Catering</a></li>
+    </ul>
+    <a class="btn btn-red btn-sm" href="#order">Order now</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <span class="kicker">📍 4501 Lougheed Hwy, Burnaby</span>
+      <h1>Hot, fresh pizza.<br><span class="r">Every day.</span></h1>
+      <p class="lede">Classic and Feast pizzas, wings and cheesy bread at your neighbourhood Freshslice at Lougheed. Open 10 AM to 9 PM, every day. Grab a slice, pick up a pie, or get it delivered.</p>
+      <div class="ctas">
+        <a class="btn btn-red" href="https://gosnappy.io/owa/snappy/detail/G5968" target="_blank" rel="noopener">🍕 Order pickup</a>
+        <a class="btn btn-green" href="tel:+16043363177">📞 604-336-3177</a>
+        <a class="btn btn-ghost" href="#menu">See the menu</a>
+      </div>
+      <div class="rating"><span class="stars">★★★★★</span> 4.6 on Google · 294 reviews</div>
+    </div>
+    <div class="pizza" aria-hidden="true">
+      <div class="crust"></div>
+      <div class="slice-gap"></div>
+      <i class="pepp" style="left:28%;top:24%"></i><i class="pepp" style="left:55%;top:30%"></i>
+      <i class="pepp" style="left:38%;top:52%"></i><i class="pepp" style="left:62%;top:58%"></i>
+      <i class="pepp" style="left:22%;top:60%"></i><i class="pepp" style="left:45%;top:72%"></i>
+      <i class="leaf" style="left:48%;top:44%"></i><i class="leaf" style="left:30%;top:40%;transform:rotate(-40deg)"></i>
+      <i class="leaf" style="left:66%;top:44%;transform:rotate(80deg)"></i>
+      <div class="badge"><div><small>MEDIUM</small>$12<small>DEAL</small></div></div>
+    </div>
+  </div>
+</header>
+
+<section class="deals" id="deals">
+  <div class="wrap">
+    <h2>Today's deals</h2>
+    <p class="sub">Two simple deals, every day. Pan or thin crust on mediums, no extra charge.</p>
+    <div class="deal-grid">
+      <article class="deal">
+        <h3>Any Classic or 1–2 Topping</h3>
+        <p>Cheese, Pepperoni, Hawaiian, Beef, Bacon &amp; Mushroom, Classic Veggie, or build your own with up to 2 toppings.</p>
+        <div class="prices">
+          <div class="price"><div class="sz">Medium</div><span class="was">$17</span><div class="now">$12</div><div class="note">Pan or thin</div></div>
+          <div class="price"><div class="sz">X-Large</div><span class="was">$28</span><div class="now">$21</div><div class="note">Pan crust only</div></div>
+        </div>
+      </article>
+      <article class="deal">
+        <h3>Any Feast or Unlimited Toppings</h3>
+        <p>Italian, Meat Lovers, Combo, Butter Chicken, BBQ Chicken Bacon, Veggie, Fiesta Pesto, Mediterranean, or load it up.</p>
+        <div class="prices">
+          <div class="price"><div class="sz">Medium</div><span class="was">$18</span><div class="now">$13</div><div class="note">Pan or thin</div></div>
+          <div class="price"><div class="sz">X-Large</div><span class="was">$30</span><div class="now">$23</div><div class="note">Pan crust only</div></div>
+        </div>
+      </article>
+    </div>
+    <p class="fine">Prices plus tax. In-store deal prices; cannot be combined with other offers. Gluten-free crust +$3.49 (medium). Prices may change.</p>
+  </div>
+</section>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>Menu</h2>
+    <p class="sub">Made fresh, hand-stretched, baked hot.</p>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" aria-selected="true" aria-controls="p-classic" id="t-classic">Classics</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-feast" id="t-feast">Feasts</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-addons" id="t-addons">Add-ons &amp; dips</button>
+      <button class="tab" role="tab" aria-selected="false" aria-controls="p-drinks" id="t-drinks">Drinks</button>
+    </div>
+
+    <div class="panel" id="p-classic" role="tabpanel" aria-labelledby="t-classic">
+      <div class="menu-grid">
+        <div class="item"><div><h4>Cheese</h4><p>Creamy white garlic or zesty tomato sauce, mozzarella, cheddar</p></div><div class="pr">M $12 · XL $21</div></div>
+        <div class="item"><div><h4>Pepperoni</h4><p>Zesty tomato sauce, mozzarella, pepperoni</p></div><div class="pr">M $12 · XL $21</div></div>
+        <div class="item"><div><h4>Hawaiian</h4><p>Zesty tomato sauce, mozzarella, ham, pineapple</p></div><div class="pr">M $12 · XL $21</div></div>
+        <div class="item"><div><h4>Beef</h4><p>Zesty tomato sauce, mozzarella, cheddar, beef, creamy white garlic drizzle</p></div><div class="pr">M $12 · XL $21</div></div>
+        <div class="item"><div><h4>Bacon &amp; Mushroom</h4><p>Zesty tomato sauce, mozzarella, bacon, mushroom</p></div><div class="pr">M $12 · XL $21</div></div>
+        <div class="item"><div><h4>Classic Veggie <span class="v">VEG</span></h4><p>Zesty tomato sauce, mozzarella, up to 3 veggie toppings</p></div><div class="pr">M $12 · XL $21</div></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-feast" role="tabpanel" aria-labelledby="t-feast" hidden>
+      <div class="menu-grid">
+        <div class="item"><div><h4>Italian Feast</h4><p>Pepperoni, bacon, ham</p></div><div class="pr">M $13 · XL $23</div></div>
+        <div class="item"><div><h4>Meat Lovers Feast</h4><p>Pepperoni, sausage, bacon, beef, ham</p></div><div class="pr">M $13 · XL $23</div></div>
+        <div class="item"><div><h4>Combo Feast</h4><p>Green pepper, mushroom, onion, pepperoni, sausage</p></div><div class="pr">M $13 · XL $23</div></div>
+        <div class="item"><div><h4>Butter Chicken Feast</h4><p>Creamy white garlic sauce, cheddar, grilled chicken, butter chicken sauce, red pepper</p></div><div class="pr">M $13 · XL $23</div></div>
+        <div class="item"><div><h4>BBQ Chicken Bacon Feast</h4><p>Creamy white garlic sauce, grilled chicken, BBQ sauce, cheddar, bacon</p></div><div class="pr">M $13 · XL $23</div></div>
+        <div class="item"><div><h4>Veggie Feast <span class="v">VEG</span></h4><p>Grape tomato, mushroom, red pepper, spinach, onion</p></div><div class="pr">M $13 · XL $23</div></div>
+        <div class="item"><div><h4>Fiesta Pesto Feast <span class="v">VEG</span></h4><p>Red pepper, corn, jalapeño, green olive, onion, pesto drizzle</p></div><div class="pr">M $13 · XL $23</div></div>
+        <div class="item"><div><h4>Mediterranean Feast <span class="v">VEG</span></h4><p>Green pepper, grape tomato, black olive, onion, feta</p></div><div class="pr">M $13 · XL $23</div></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-addons" role="tabpanel" aria-labelledby="t-addons" hidden>
+      <div class="menu-grid">
+        <div class="item"><div><h4>Chicken Wings (8 pcs)</h4><p>BBQ, Hot or Plain</p></div><div class="pr">$9.99</div></div>
+        <div class="item"><div><h4>Cheesy Bread</h4><p>Golden, cheesy, with marinara</p></div><div class="pr">$6.99</div></div>
+        <div class="item"><div><h4>Dips</h4><p>Classic Ranch, Cheesy Jalapeño, Roasted Garlic, Ancho Chipotle, House Ranch, House Marinara</p></div><div class="pr">$1.24 each</div></div>
+      </div>
+    </div>
+
+    <div class="panel" id="p-drinks" role="tabpanel" aria-labelledby="t-drinks" hidden>
+      <div class="menu-grid">
+        <div class="item"><div><h4>PepsiCo cans</h4><p>355 ml</p></div><div class="pr">$1.99</div></div>
+        <div class="item"><div><h4>PepsiCo bottles</h4><p>591 ml</p></div><div class="pr">$2.69</div></div>
+        <div class="item"><div><h4>PepsiCo bottles</h4><p>2 L</p></div><div class="pr">$4.49</div></div>
+        <div class="item"><div><h4>Dole Juice</h4><p>450 ml</p></div><div class="pr">$2.99</div></div>
+        <div class="item"><div><h4>Gatorade</h4><p>591 ml</p></div><div class="pr">$3.69</div></div>
+        <div class="item"><div><h4>Aquafina Water</h4><p>500 ml</p></div><div class="pr">$1.99</div></div>
+        <div class="item"><div><h4>Juice Box</h4><p>200 ml</p></div><div class="pr">$1.99</div></div>
+        <div class="item"><div><h4>Rockstar</h4><p>473 ml</p></div><div class="pr">$3.99</div></div>
+        <div class="item"><div><h4>Pure Leaf Iced Tea</h4><p>547 ml</p></div><div class="pr">$3.99</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="order" id="order">
+  <div class="wrap">
+    <h2>Order your way</h2>
+    <p class="sub">Pickup, delivery, or just walk in for a hot slice.</p>
+    <div class="order-grid">
+            <a class="o" href="https://gosnappy.io/owa/snappy/detail/G5968" target="_blank" rel="noopener"><b>Order pickup</b><span>Official Freshslice ordering</span></a>
+      <a class="o" href="https://www.ubereats.com/ca/search?q=Freshslice%20Pizza" target="_blank" rel="noopener"><b>Uber Eats</b><span>Delivery</span></a>
+      <a class="o" href="https://www.doordash.com/search/store/freshslice%20pizza/" target="_blank" rel="noopener"><b>DoorDash</b><span>Delivery</span></a>
+      <a class="o" href="https://www.skipthedishes.com/" target="_blank" rel="noopener"><b>SkipTheDishes</b><span>Delivery</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="visit">
+  <div class="wrap">
+    <h2>Visit us</h2>
+    <p class="sub">Find us at Lougheed in Burnaby.</p>
+    <div class="visit-grid">
+      <div class="card">
+        <h3>Location</h3>
+        <p class="addr">4501 Lougheed Hwy, Unit P2503<br>Burnaby, BC V5C 0K3</p>
+        <p>Phone: <a href="tel:+16043363177"><b>604-336-3177</b></a></p>
+        <div class="feat"><span>Outdoor seating</span><span>Vegetarian options</span><span>Walk-ins welcome</span></div>
+        <a class="btn btn-green" href="https://www.google.com/maps/search/?api=1&query=Freshslice+Pizza+4501+Lougheed+Hwy+Burnaby" target="_blank" rel="noopener">Get directions</a>
+      </div>
+      <div class="card">
+        <h3>Hours</h3>
+                <table class="hours"><tr><td>Monday</td><td>10 AM – 9 PM</td></tr><tr><td>Tuesday</td><td>10 AM – 9 PM</td></tr><tr><td>Wednesday</td><td>10 AM – 9 PM</td></tr><tr><td>Thursday</td><td>10 AM – 9 PM</td></tr><tr><td>Friday</td><td>10 AM – 9 PM</td></tr><tr><td>Saturday</td><td>10 AM – 9 PM</td></tr><tr><td>Sunday</td><td>10 AM – 9 PM</td></tr></table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="catering" style="padding-top:0">
+  <div class="wrap">
+    <div class="cater">
+      <div>
+        <h2>Feeding a crowd?</h2>
+        <p>Office lunches, birthday parties, team events and study nights. X-Large Feasts from $23 each. Call ahead and we'll have it hot and ready.</p>
+      </div>
+      <a class="btn" href="tel:+16043363177">Call 604-336-3177</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Freshslice Pizza · 4501 Lougheed Hwy P2503, Burnaby, BC</span>
+    <span>Independently owned and operated franchise location</span>
+  </div>
+</footer>
+
+<div class="mbar">
+  <a class="btn btn-green" href="tel:+16043363177">📞 Call</a>
+  <a class="btn btn-red" href="#order">🍕 Order now</a>
+</div>
+
+<script>
+document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected','false'));
+  document.querySelectorAll('.panel').forEach(p=>p.hidden=true);
+  t.setAttribute('aria-selected','true');
+  document.getElementById(t.getAttribute('aria-controls')).hidden=false;
+}));
+</script>
+</body>
+</html>
